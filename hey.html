@@ -1,263 +1,518 @@
  <!Doctype html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="hey.css>"
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8">
-        <title>SHOPPINGSITE</title> 
-        <style>
-            h1 {
-                font-size: 40px;
-                color: white;
-                font-family: 'Times New Roman', Times, serif;
-                text-align: left;
-                padding: 20px;
-                background-color: rgb(162, 233, 233);
-                margin: 10px;
-                width: 100%;
-                border-radius: 15px;
-                border-color: solid black;
-                border: 2px;
-                font-weight: 900;
-                }
-                h2 {
-                    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-                    font-size: large;
-                    font-weight: 500;
-                    text-align: center;
-                    background-color: rgb(63, 121, 143);
-                    color:white;
-                    padding: 20px;
-                    width: 96%;
-                }
-                .radio-group {
-  display: table;
-}
-.radio-option {
-  display: table-row;
-}
-.radio-option input {
-  display: table-cell;
-  padding-right: 10px;
-}
-.radio-option span {
-  display: table-cell;
-  color: black;
-}
-                h3 {
-                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                    font-size: medium;
-                    
-                }
-                div {margin-top: 25px;}
-                body {background-color: white;}
-           button {
-            padding: 10px;
-            margin-bottom: 5px;
-            background-color: rgb(63, 121, 143);
-            color: white;
-            width: 90%;
-            border-radius: 10px;
-           } 
-          a:hover{
-            border: 5px;
-            border-radius: 10px;
-            color:rgb(220, 150, 220);
-            cursor: pointer;
-           }
-           label {
-            border: 3px;
-            margin: 5px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: black;
-        }
-        .container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 100%;
-      align-items: center;
-    }
-    input {
-        background-color: white;
-        margin: 10px;
-        color:black;
-        padding: 10px;
-        width:90%;
-        justify-content: flex-start;
-        border-radius: 10px;
-        align-items: center;
+  <html lang="en">
+   <head>
+   <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="utf-8">
+     <title>SHOPPINGSITE</title> 
+      <link rel="stylesheet" href="hey.css">
+       </head>
+   <header>
+     <div class="header">
+      <svg width="200" height="120">
+        <!-- Define gradient -->
+       <defs>
+         <lineargradient id="bgGradient">
+           <stop offset="0%" style="stop-color:rgb(63, 121, 143); stop-opacity:1" />
+           <stop offset="100%" style="stop-color:rgb(44, 60, 66); stop-opacity:1" />
+         </lineargradient>
+       </defs>
+        <!-- Background rectangle with gradient -->
+       <rect x="10" y="10" width="180" height="180" fill="url(#bgGradient)" stroke="#333" stroke-width="4" rx="20" ry="20"/>
+        <!-- Shopping cart emoji -->
+       <text x="50%" y="55%" font-size="80" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
+        🛒
+       </text>
+        <!-- Brand name -->
+       <text x="50%" y="95%" font-size="20" text-anchor="middle" fill="#fff">
+       GhostShopping.com
+       </text>
+      </svg>
+      <p class="search-container">
+       <form action="/search" method="get">
+         <input type="text" name="q" class="search-box" placeholder="Search products...">
+         <button type="submit" class="search-button">🔍</button>
+       </form>
+      </p>
+     </div>
+   </header>.......your one stop slash sales online log store
+     <h2><strong>Register </strong></h2>
+     <body class="container">
+     <form action="submit-registration.php" method="post">
+       <label for="FName" >First Name</label>
+       <br>
+       <input type="text" id="FName" placeholder="Name" required>
+       <br>
+       <label for="LName">Last Name</label>
+       <br>
+       <input type="text" id="LName" placeholder="Last Name" >
+       <br>
+       <label for="Email">Email</label>
+       <br>
+       <input type="email" id="Email" placeholder="Email" required>
+       <br>
+       <label for="pw">Password</label>
+       <br>
+       <input type="password" id="pw" minlength="8" required>
+       <br>
+       <h3 for="would" >What Items Would you Like to Receive Slash Email update for ?</h3>
+      <div class="radio-group">
+       <label class="radio-option" for="name:gdt;">Gadget
+         <input type="radio" id="gdt" name="Recieve slash email for" value="Gadget">
+       </label>
+        <br>
+       <label class="radio-option" for="name:wrs;">Fashion Wears </label>
+         <input type="radio" id="wrs" name="Recieve slash email for" value="Wears">
+         <br>
+       <label class="radio-option" for="name:cos;">Cosmestics </label>
+         <input type="radio" id="cos" name="Recieve slash email for" value="cosmetics">
+       <label class="radio-option" for="name:all;">All slash sales</label>
+         <input type="radio" id="all" name="Recieve slash email for" value="all">
 
-    }
-     .search-container {
-      display: flex;
-      justify-content: center;
-      flex-grow: 1;
-    }
-    .search-box {
-      padding: 8px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px 0 0 4px;
-      width: 250px;
-      float: center;
-    }
-    .header {
-    display: flex;              /* puts items side by side */
-    align-items: center;    
-    justify-content: space-between; 
-    padding: 10px;
-    background-color: white;
-  }
-    .search-button {
-      padding: 4px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      background-color: rgb(63, 121, 143);
-      color: white;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-      width: 40px;
-      margin-bottom: none;
-    }
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-      width: 100%;
-      border-radius: px;
-    strong {font-weight: 600;}
-    }
-    
-        </style>
-    </head>
-    <meta charset="UTF-8">
-    <header>
-
-    <div class="header"><svg width="200" height="120">
-  <!-- Define gradient -->
-  <defs>
-    <lineargradient id="bgGradient">
-      <stop offset="0%" style="stop-color:rgb(63, 121, 143); stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgb(44, 60, 66); stop-opacity:1" />
-    </lineargradient>
-  </defs>
-
-  <!-- Background rectangle with gradient -->
-  <rect x="10" y="10" width="180" height="180" fill="url(#bgGradient)" stroke="#333" stroke-width="4" rx="20" ry="20"/>
-
-  <!-- Shopping cart emoji -->
-  <text x="50%" y="55%" font-size="80" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
-    🛒
-  </text>
-
-  <!-- Brand name -->
-  <text x="50%" y="95%" font-size="20" text-anchor="middle" fill="#fff">
-    GhostShopping.com
-  </text>
-</svg>
-
-<p class="search-container"><form action="/search" method="get">
-   
-        <input type="text" name="q" class="search-box" placeholder="Search products...">
-        <button type="submit" class="search-button">🔍</button>
- </form></p>
-    </div>
-    </header>.......your one stop slash sales online store
-    <h2><strong>Register </strong></h2>
-    <body class="container">
-
-<form action="submit-registration.php" method="post">
-    <label for="FName" >First Name</label>
-    <br>
-    <input type="text" id="FName" placeholder="Name" required>
-    <br>
-
-    <label for="LName">Last Name</label>
-    <br>
-    <input type="text" id="LName" placeholder="Last Name" >
-
-    <br>
-    <label for="Email">Email</label>
-    <br>
-    <input type="email" id="Email" placeholder="Email" required>
-    <br>
-    <label for="pw">Password</label>
-    <br>
-    <input type="password" id="pw" minlength="8" required>
-    <br>
-    <h3 for="would" >What Items Would you Like to Receive Slash Email update for ?</h3>
-    <div class="radio-group">
-
-<label class="radio-option" for="name:gdt;">Gadget
-        <input type="radio" id="gdt" name="Recieve slash email for" value="Gadget">
-   </label>
-<br>
-    <label class="radio-option" for="name:wrs;">Fashion Wears </label>
-        <input type="radio" id="wrs" name="Recieve slash email for" value="Wears">
+      </div>
+       <button type="submit" style="display: block;"><strong>Sign up</strong></button>
   
-    <br>
-     <label class="radio-option" for="name:cos;">Cosmestics </label>
-        <input type="radio" id="cos" name="Recieve slash email for" value="cosmetics">
+
+     </form>
+
+     <br>
+     <svg width="50%" height="40%">
+       <rect
+         x="30"
+         y="20"
+         ry="150px"
+         rx="150px"
+         width="300" height="100" 
+         style="fill: blue;" stroke="red" stroke-width="5"/> sorry your browser doesn't support inline svg
+     </svg>
+       
+     <svg width="200" height="200">
+       <polygon points="100,10 120,80 190,80 130,120 
+         150,190 100,150 50,190 70,120 
+         10,80 80,80"
+         fill="gold"
+         stroke="black"
+         stroke-width="2" />
+     </svg>
+     <svg id="pp2" height="300" width="400">
+       <defs>
+         <lineargradient id="grad1">
+           <stop offset="0%" style="stop-color:blue"/>
+           <stop offset="100%" style="stop-color:red" />
+         </lineargradient>
+       </defs>
+       <text fill="green" font-size="45" font-family="verdana" x="40" y="86"> SVG </text>
+       <rect height="200" width="200" fill="url(#grad1)"/>
+         Sorry your browser does not support svg
+     </svg> 
+     <svg id="pp1" width="300" height="200">
+      <!-- Define the gradient -->
+       <defs>
+         <lineargradient id="myGradient">
+           <stop offset="0%" style="stop-color:blue; stop-opacity:1" />
+           <stop offset="100%" style="stop-color:purple; stop-opacity:1" />
+         </lineargradient>
+       </defs>
+        <!-- Use the gradient to fill a rectangle -->
+      <rect width="900" height="200" fill="url(#myGradient)" />
+     </svg>
+<br><br>
+
   
-   <label class="radio-option" for="name:all;">All slash sales</label>
-        <input type="radio" id="all" name="Recieve slash email for" value="all">
+   <br><br>
+<button onclick="getLocation()">Square/Rectangle</button>
+
+<video height="500" width="100%" controls>
+<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+
+   Your browser does not support the video</video>
+
+   <br><br>
+
+   <audio controls>
    
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">Your browser does not support the video
+   </audio>
+   <br>
+   <audio controls>
+ <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp3" type="audio/mp3">  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+ </audio>
+ <iframe width="100%" height="500" controls
+ src="https://youtube.com/embed/A92Vfa7T2O8?mute=1&loop=1&autoplay=1"> </iframe>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+
+ <h2>My Location on Map</h2>
+   <div id="map" class="map"></div>
+ <button onclick="getlocation()" style="display: block;"><strong>LOCATION</strong></button>
+ <h2 id="output"></h2>
+
+ <!-- Leaflet JS -->
+ <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+ <h1 style="text-align: center;" draggable="true"> DRAG and DROP API</h1>
+ <div id="divv" class="divv" ondrag="drophandler(event)" ondragover="dragoverhandler(event)" style="height: 320px; width: 100%; border: solid black; border-radius: 10px;" >
+ <img id="img1" src="lightbulb.jpg"
+ draggable="true" ondragstart="dragstarhandler(event)" width="96%" height="300">
+ </div>
+
+ <div id="diva" class="diva" ondrop="drophandler(event)" ondragover="dragoverhandler(event)" style="height: 320px; width: 100%; border: solid black; border-radius: 10px;"></div>
+ 
+ <h2><strong>Web storage API test</strong></h2>
+  <div id="result" class="divv" style="height: 320px; width: 100%; border: solid black; border-radius: 10px;"  ></div>
+
+     <button onclick="clickCounter()" type="button" style="display: block;">X-<stong>Webstorage API(localStorage) click counter test</stong></button>
+       <h1 id="count"></h1>
+   
+   <button onclick="startWorker()" type="button" style="display: block;">Start Worker</button>
+   <h1>Time counter: <output id="worker"></output></h1>
+
+   <button onclick="stopWorker()" style="display: block;">Stop Worker</button>
+
+
+   <h2>Getting server update</h2>
     
+
+    <div id="gradh" class="divv"></div>
+    <div id="grada" class="divv"></div>
+    <div id="gradb" class="divv"></div>
+    <div id="cgrad1" class="divv"></div>
+    <div id="cgrad2" class="divv"></div>
+    <div id="cgrad3" class="divv"></div>
+    <div class="imagecard">
+      <img src="/lightbulb.jpg" alt="lightbulb" style="width: 100%;">
+      <div class="cardcontainer">
+        <p>LIGHT BULB CARD</p>
+      </div>
+    </div>
+    <h3>imagecard</h3>
+    <div class="imagecard2">
+      <div class="cardt">
+        <p>1</p>
+      </div>
+      <div class="cardcontainer">
+        <p>JANUARY 2021</p>
+      </div>
+    </div>
+    <div>
+      <p class="test">Aim for the stars even when you fall you'll land on the cloud (long enough to mske it work i guess)</p>
+      <p class ="test3">Aim for tghe stars even when you fall you'll land on the cloud (long enough to mske it work i guess)</p>
+    </div> 
+
+     <div class="div4"> This div doesn't rotate while the first div will rotate the css function for this is translate(rotate()) </div>
+     <div class="div4" id="mydiv4">This div  rotate clockwise 20degrees</div>
+     <div id="div5">Aim for the stars even when you fall you'll land on the cloud (long enough to mske it work i guess)</div>
+      <div class="d31">
+      <strong>3d RotateX</strong>
+      <br> 3d rotateX function sample
+    </div>
+     <div class="d32">
+      <strong>3d RotateY</strong>
+      <br> 3d rotateY function sample
+    </div>
+     <div class="d33">
+      <strong>3d RotateZ</strong>
+      <br> 3d rotateZ function sample
+    </div>
+     <div  class="transition">
+      <h3><strong>TRANSITION</strong>
+      <br>transition function sample</h3>
+    </div>
+    <div  class="div">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="divan">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="divan1">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="divan2" id="an1">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="divan2" id="an2">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="divan2" id="an3">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="divan2" id="an4">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="divan2" id="an5">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+     <div  class="divanalpha">
+      <h3><strong>Animination</strong>
+      <br>css animination sample</h3>
+    </div>
+    <div  class="tooltip">
+      <strong>Tooltip</strong>
+      <br><span class="tooltiptext"> This is a tooltip</span>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <a target="_blank" href="img_5terre.jpg">
+          <img src="img_5terre.jpg" alt="pic of 5terre" style="width:600px; height:400px;">
+        </a>
+      </div>
+      <p class="desc" style="display: flexbox; justify-content: baseline;">Cinque Terre</p>
+    </div>
+    <div class="galllery">
+      <div class="gallery-item">
+        <a target="_blank" href="img_forest.jpg">
+          <img src="img_forest.jpg" alt="Green Forest" style="width:600px; height:400px;">
+        </a>
+      </div>
+      <div class="desc" style="text-align: center;"> Green Forest</div>
+    </div>
+    <div class="contain">
+      <img src="img_forest.jpg" alt="Forest" class="imag">
+      <div class="overlay">
+        <div class="text">Hello World</div>
+      </div>
+    </div>
+    <div class="contain">
+      <img src="img_lights.jpg" alt="lights image" class="imag1">
+      <div class="middle">
+        <div class="text1">PELUMI<br>John</div>
+      </div>
+    </div>
+    <div class="contain">
+      <img src="img_forest.jpg" alt="Forest" class="imag2">
+      <div class="overlay1">
+        <div class="text2">Hello World</div>
+      </div>
+    </div>
+    <h1>Responsive Modal images</h1>
+
+    <div class="gallery">
+      <img src="img_5terre.jpg" alt="Cinque Tere" class="gallery-item1" onclick="openModal('modal1', 'Cinque Terre')">
+      <img src="img_forest.jpg" alt="Forest" class="gallery-item1" onclick="openModal('modal2', 'Forest')">
+      <img src="img_lights.jpg" alt="Nothern Light" class="gallery-item1" onclick="openModal('modal3', 'Nothern Light')">
+    </div>
+    <div id="modal" class="modal">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <img src="img_5terre.jpg" alt="Cinque Terre" class="modal-content" width="600" height="400">
+      <div class="caption" ></div>
     </div>
 
-    <button type="submit"><strong>Sign up</strong></button>
-<br>
+    <div id="modal2" class="modal">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <img src="img_forest.jpg" alt="Forest" class="modal-content" width="600" height="400">
+      <div class="caption"></div>
+    </div>
 
-    <svg width="50%" height="40%">
-        <rect
-        x="30"
-        y="20"
-        ry="150px"
-        rx="150px"
-        width="300" height="100" 
-        style="fill: blue;" stroke="red" stroke-width="5"/> sorry your browser doesn't support inline svg</svg>
+    <div id="modal3" class="modal">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <img src="img_lights.jpg" alt="Nothern Light" class="modal-content" width="600px" height="400px">
+      <div class="caption"></div>
+    </div>
+    <img src="img_5terre.jpg" alt="cinque Terre" class="img5" width="50%">
+    <div class="img
 
+    6">
+      <img src="img_forest.jpg" alt="Forest" style="width:50%;">
+    </div>
+    <div class="imag7">
+      <img src="img_lights.jpg" alt="Nothern Lights" style="height: 400px; width: 600px;">
+    </div>
+    <div class="dropdown" style="float: left;" >
+      <button class="dropbtn">&#127968;</button>
+      <div class="dropdown-content">
+        <a href="#mydiv4">Groceries</a>
+        <a href="#div5">Electronics</a>
+        <a href="#cgrad2">Gradient</a>
+        <a href="#grada">Repeating R Gradient</a>
+      </div>
+    </div>
+    <div class="dropdown" style="float: right; right: 15px;" >
+      <button class="dropbtn" style="padding: 16px auto;">&#127968;</button>
+      <div class="dropdown-content">
+        <a href="#mydiv4">Groceries</a>
+        <a href="#div5">Electronics</a>
+        <a href="#cgrad2">Gradient</a>
+        <a href="#grada">Repeating R Gradient</a>
+      </div>
+    </div>
+    <div class="dropdown1">
+      <img src="img_5terre.jpg" alt="Cinque Terre" width="100px" height="120px">
+      <div class="dropdown-content2">
+       <img src="img_5terre.jpg" alt="Cinque Terre bigger version">
+       <div class="desc1"> Cinque Terre</div>
+      </div>
+    </div>
+    <ul>
+      <li><a href="#mydiv4">Rotate</a></li>
+      <li><a href="#div5">Skew</a></li>
+      <li><a href="#grada">Gradient</a></li>
+      <li><a href="#" class="dropdown">More</a></li>
+      <div class="dropdown-content">
+         <a href="#cgrad2">Gradient</a>
+        <a href="#grada">Repeating R Gradient</a>
+      </div>
+    </ul>
+    <img id="pel" src="img_5terre.jpg">
+    <img id="lum" src="img_5terre.jpg">
+    <img id="mi" src="img_5terre.jpg">
+    <div class="rform">
+     <form class="form">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" placeholder="Name" required>
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" placeholder="lastname">
+      <label for="country">Country:</label>
+      <select name="name" id="country">
+        <option value="Australia">Australia</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Zimbabwe">Zimbabwe</option>
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Ghana">Ghana</option>
+        <option value="Benin">Benin</option>
+        <option value="Andorra">Androrra</option>
+        <option value="Algeria">Algeria</option>
+        <option value="Albenia">Albenia</option>
+      </select> <br>
+      <label for="message" style="margin-top: 10px;">Your Thought?</label>
+      <input type="textarea" id="message" placeholder="Write something...">
+      <button type="submit">Sign Up</button>
+     </form>
+    </div>
+    <div class="fixed">
+      <a href=""><img src="icons8-speech-48.png" alt="Send a message" ></a>
+   </div>
+   <div class="notification">
+    <span class="notification-badge">7</span>
+   </div>
+   <div class="clearfix">
+    <div class="box">CYNICAL <br> means believing that people motivated purely by self-interest rather than by honor, sincerity, or good motives</div>
+    <div class="box" style="background-color: rgb(193, 250, 250);">CYNICAL <br> means believing that people motivated purely by self-interest rather than by honor, sincerity, or good motives</div>
+    <div class="box" style="background-color: rgb(147, 243, 243);">CYNICAL <br> means believing that people motivated purely by self-interest rather than by honor, sincerity, or good motives</div>
+   </div>
+   <div class="clearfix">
+    <div class="clearfix-img">
+      <img src="img_5terre.jpg" alt="Cinque Terre" style="width: 100%;">
+    </div>
+    <div class="clearfix-img">
+     <img src="img_forest.jpg" alt="Forest" style="width: 100%;">
+    </div>
+    <div class="clearfix-img">
+     <img src="img_lights.jpg" alt="North Forest" style="width: 100%;">
+    </div>
+   </div>
+   <div class="center">
+    <p>CYNICAL means believing that people motivated purely by self-interest rather than by honor sincerity or good motive</p>
+   </div>
+   <div class="center1">
+    <p>CYNICAL means believing that people motivated purely by self-interest rather than by honor sincerity or good motive</p>
+   </div>
+    <img src="img_5terre.jpg" alt="Cinque Terre" class="center3">
+    <div class="float">
+      <div class="center4">
+      <p>CYNICAL means believing that people motivated purely by self-interest rather than by honor sincerity or good motive</p>
+    </div>
+    <div class="right1">
+     <p> CYNICAL means believing that people motivated purely by self-interest rather than by honor sincerity or good motive</p>
+    </div>
+    </div>
+    <div class="counter">
+      <h2 style="background-color: rgba(240, 248, 255, 0.91); color: black;">Html Tutorial</h2>
+      <p>This is a html tutorial</p>
+      <h2 style="background-color: whitesmoke;color: black;">CSS Tutorial</h2>
+      <p>This a css tutorial</p>
+      <h2 style="background-color: whitesmoke; color: black;">Javascript Tutorial</h2>
+      <p>This a Javascript Tutorial</p>
+    </div>
+    <div class="counter">
+      <h5>HTML/CSS Tutorials</h5>
+      <h6>HTML</h6>
+      <h6>CSS</h6>
+      <h6>Bootstrap</h6>
+      <h6>W3 CSS</h6>
 
-        <svg width="200" height="200">
-  <polygon points="100,10 120,80 190,80 130,120 
-                   150,190 100,150 50,190 70,120 
-                   10,80 80,80"
-           fill="gold"
-           stroke="black"
-           stroke-width="2" />
-</svg>
+      <h5>Scripting Tutorial</h5>
+      <h6>JavaScript</h6>
+      <h6>JQuery</h6>
+      <h6>React</h6>
 
-<svg height="300"
-width="400">
-<defs>
-<lineargradient id="grad1">
-  <stop offset="0%" style="stop-color:blue"/>
-<stop offset="100%" style="stop-color:red" />
-</lineargradient>
-</defs>
-<text fill="green" font-size="45" font-family="verdana" x="40" y="86"> SVG </text>
-<rect height="200" width="200" fill="url(#grad1)"/>
-Sorry your browser does not support svg
-</svg>
-
-
-  <svg width="300" height="200">
-    <!-- Define the gradient -->
-    <defs>
-      <lineargradient id="myGradient">
-        <stop offset="0%" style="stop-color:blue; stop-opacity:1" />
-        <stop offset="100%" style="stop-color:purple; stop-opacity:1" />
-      </lineargradient>
-    </defs>
-
-    <!-- Use the gradient to fill a rectangle -->
-    <rect width="300" height="200" fill="url(#myGradient)" />
-  </svg>
-
-  <video height="200" width="350">
-<source src=/video/abeg.com></video>
-</form>
-    </body>
-
-
-</html>
+      <h5>Programmming Tutorials</h5>
+      <h6>Python</h6>
+      <h6>Java</h6>
+      <h6>C++</h6>
+    </div>
+    <div style="display: block;">
+      <p>List 1</p>
+      <pre>
+    <ol>
+      <li>Item</li>
+      <li>Item</li>
+      <li>Item
+        <ol>
+          <li>Item</li>
+          <li>Item</li>
+          <li>Item</li>
+        </ol>
+      </li>
+    </ol>
+    </pre>
+   </div>
+   <div>
+    <p class="border-image">
+      <img src="img_forest.jpg" alt="forest" style="z-index: 1;">
+      <p style="z-index: 3; color: rgba(255, 255, 255, 0); align-items: center; position: relative;">This is a bridge in a forest background </p>
+    </p>
+   </div>
+   <div>
+     <p id="dum"></p>
+     <h2 id="drum"></h2>
+     <h2 id="age"></h2>
+     <h2 id="air"></h2>
+     <h2 id="gg"></h2>
+     <h2 id="veh"></h2>
+     <h2 id="boo"></h2>
+     <h2 id="tst"></h2>
+     <h2 id="vl"></h2>
+     <h2 id="rsq"></h2>
+     <h2 id="cde"></h2>
+     <h2 id="uvw"></h2>
+     <h2 id="ghf"></h2>
+     <h2 id="ij"></h2>
+     <h2 id="km"></h2>
+     <h2 id="ko"></h2>
+     <h2 id="ship"></h2>
+     <h2 id="f16"></h2>
+     <h2 id="f17"></h2>
+     <p>
+      <input id="ages" type="number" value="18">
+      <button onclick="myFunctions()">Click to check for vote Eligibility</button>
+      <p id="ags"></p>
+     </p>
+     <div>
+      <input id="celsius" type="number" placeholder="Input Temperature in Celsius">
+      <button onclick="convertTemperature()">Check Weather For Today</button>
+      <p id="temp"></p>
+      <h2>Input your age below to your driving Eligibility</h2>
+      <input id="text" type="number" placeholder="Age">
+      <button onclick="driveCheck()">Check Eligibility</button>
+      <p id="od"></p>
+      <p id="sed"></p>
+     </div>
+     <p id="alert" style="color: black;"></p>
+   </div>
+   
+   <script src="hey." defer></script>
+  </body>
+</html> 

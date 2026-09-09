@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="sent" style="height: 500px; width: 100%;"></div>
+     <script>
+        const q = document.getElementById ("sent");  
+        if(typeof(EventSource) !=="undefined")  {
+           const source = new
+           EventSource("demo.php");
+           source.onopen = () => {
+            q.innerHTML += "connected to server. waiting for server update....<br>";
+            };
+            source.onmessage = (event) => {
+            q.innerHTML += event.data + "<br>";
+            };
+            source.onerror = () => {
+            q.innerHTML ="Connection error or closed.<br>";
+            };
+            }else{
+            q.innerHTML = "Sorry, no support for server-sent events.";
+         }
+      
+      </script>
+   
+</body>
+</html>
